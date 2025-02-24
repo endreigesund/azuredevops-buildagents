@@ -244,13 +244,13 @@ stages:
                 -PrefixToPathTrim "$(TemplateDirectoryPath)" `
                 -PrintTopNLongest 25
 
-          - task: PowerShell@2
-            displayName: "Clean up resources"
-            condition: always()
-            inputs:
-              targetType: filePath
-              filePath: ./runner-images/images.CI/linux-and-win/cleanup.ps1
-              arguments: -TempResourceGroupName "$(TempResourceGroupName)"
+          #- task: PowerShell@2
+          #  displayName: "Clean up resources"
+          #  condition: always()
+          #  inputs:
+          #    targetType: filePath
+          #    filePath: ./runner-images/images.CI/linux-and-win/cleanup.ps1
+          #    arguments: -TempResourceGroupName "$(TempResourceGroupName)"
 
   - stage: create_gallery_imagevm_${{ parameters.image_type }}
     displayName: 'Create Gallery Image Version VM'
